@@ -5,18 +5,10 @@ import "./style.css";
 function ImageCard(props) {
     return (
 
-        <div className="img-container d-flex flex-row">
-            <div className="row">
-                <div className="col-sm">
+        <button className="img-container" data-id={props.id} onClick={() => { props.clickImage(props.id); props.shuffle() }}>
+            <img src={props.image} alt={props.name} className="img-thumbnail"></img>
 
-                    <button data-id={props.id} onClick={() => { props.clickImage(props.id); props.shuffle() }}>
-                        <img src={props.image} alt={props.name} className="img-thumbnail"></img>
-
-                    </button>
-                </div>
-
-            </div>
-        </div>
+        </button>
 
     )
 }

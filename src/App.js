@@ -51,20 +51,25 @@ class App extends Component {
 
       <Wrapper>
         <Navbar userScore={this.state.userScore} highScore={this.state.highScore}>Kuzco's Klicky Game</Navbar>
+        <div className="container">
+          <div className="d-flex flex-row flex-wrap justify-content-between">
 
+            {
+              this.state.images.map(image => (
+                <ImageCard
+                  key={image.id}
+                  shuffle={this.shuffle}
+                  clickImage={this.clickImage}
+                  id={image.id}
+                  name={image.name}
+                  image={image.image}
+                />
+              ))
+            }
+          </div>
 
-        {
-          this.state.images.map(image => (
-            <ImageCard
-              key={image.id}
-              shuffle={this.shuffle}
-              clickImage={this.clickImage}
-              id={image.id}
-              name={image.name}
-              image={image.image}
-            />
-          ))
-        }
+        </div>
+
 
 
       </Wrapper >
