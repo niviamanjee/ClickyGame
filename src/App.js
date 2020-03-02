@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import ImageCard from "./components/ImageCard";
 import Wrapper from "./components/Wrapper";
@@ -6,46 +6,77 @@ import Title from "./components/Title";
 import images from "./images.json";
 import 'bootstrap/dist/css/bootstrap.css';
 
-function App() {
+class App extends Component {
 
-  const [imageState, setImageState] = useState({
+  state = {
+    userScore: 0,
+    highScore: 0,
+    message: "You already guessed this character!",
     isClicked: false,
     images: images
-  });
 
-  const clickImage = id => {
-    const clickedImage = imageState.images.filter(image => image.id === id)
-    console.log(clickedImage)
-    setImageState({ ...imageState, isClicked: true });
-  }
-  const shuffle = () => {
-    const images = imageState.images.sort(function (a, b) {
-      return 0.5 - Math.random()
-    });
-    console.log(images)
-    setImageState({ images });
   };
 
+  // const userScore = 0;
+  // const highScore = 0;
 
-  return (
+  clickImage = id => {
+    // const clickedImage = this.state.images.filter(image => image.id === id)
+    // console.log(clickedImage[0])
 
-    <Wrapper>
-      <Title>Kuzco's Klicky Game</Title>
+    this.setState({
+      images: this.state.images.map(image => {
 
+        if (image.id === id) {
+          // if (image.isClicked === false) {
 
-      {images.map(image => (
-        <ImageCard
-          shuffle={shuffle}
-          clickImage={clickImage}
-          id={image.id}
-          name={image.name}
-          image={image.image}
-        />
-      ))}
+          //   image.isClicked = true
 
 
-    </Wrapper>
-  )
-};
+          // }
+          // else {
+
+          // }
+
+        }
+      })
+    })
+    console.log(this.state)
+
+
+  }
+  shuffle = () => {
+    const images = this.state.images.sort(function (a, b) {
+      return 0.5 - Math.random()
+    });
+    this.setState({ images });
+  };
+
+  render() {
+
+    return (
+
+      <Wrapper>
+        <Title>Kuzco's Klicky Game</Title>
+
+
+        {
+          images.map(image => (
+            <ImageCard
+              key={image.id}
+              shuffle={this.shuffle}
+              clickImage={this.clickImage}
+              id={image.id}
+              name={image.name}
+              image={image.image}
+            />
+          ))
+        }
+
+
+      </Wrapper >
+    )
+  };
+}
 
 export default App;

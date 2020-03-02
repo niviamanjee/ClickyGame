@@ -6,7 +6,7 @@ function ImageCard(props) {
 
         <div className="img-container">
             <button data-id={props.id} onClick={() => { props.clickImage(props.id); props.shuffle() }}>
-                <img src={props.image} alt={props.name} class="img-thumbnail"></img>
+                <img src={props.image} alt={props.name} className="img-thumbnail"></img>
 
             </button>
         </div>
