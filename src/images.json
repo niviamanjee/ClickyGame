@@ -2,46 +2,55 @@
     {
         "id": 1,
         "name": "Yzma",
+        "clicked": false,
         "image": "https://vignette.wikia.nocookie.net/disney/images/e/e1/Yzma_42.PNG/revision/latest?cb=20120716012806"
     },
     {
         "id": 2,
         "name": "Kuzco",
+        "clicked": false,
         "image": "https://images.adagio.com/images2/custom_blends/106063.jpg"
     },
     {
         "id": 3,
         "name": "Kronk",
+        "clicked": false,
         "image": "https://ohmy.disney.com/wp-content/uploads/2015/01/lovable-misfits-kronk-728x485-345597596652.jpg"
     },
     {
         "id": 4,
         "name": "Pacha",
+        "clicked": false,
         "image": "https://i.kym-cdn.com/entries/icons/facebook/000/019/698/d96.jpg"
     },
     {
         "id": 5,
         "name": "Chicha",
+        "clicked": false,
         "image": "https://vignette.wikia.nocookie.net/disney/images/e/e3/Chicha.jpg/revision/latest?cb=20160720200441"
     },
     {
         "id": 6,
         "name": "Bucky the Squirrel",
+        "clicked": false,
         "image": "https://vignette.wikia.nocookie.net/heroes-and-villians/images/6/69/IMG_0031.JPG/revision/latest/top-crop/width/360/height/450?cb=20171103180334"
     },
     {
         "id": 7,
         "name": "Theme Song guy",
+        "clicked": false,
         "image": "https://3.bp.blogspot.com/_24m2kzhON5s/TImOf_sUmSI/AAAAAAAAAUM/jUMj4qld_hE/s1600/themesong+guy3.JPG"
     },
     {
         "id": 8,
         "name": "Tipo",
+        "clicked": false,
         "image": "https://vignette.wikia.nocookie.net/disney/images/3/3c/Tipo.jpg/revision/latest?cb=20160720202704"
     },
     {
         "id": 9,
         "name": "Chaca",
+        "clicked": false,
         "image": "https://vignette.wikia.nocookie.net/disney/images/d/d1/Chaca.jpg/revision/latest?cb=20160720201310"
     }
 ]

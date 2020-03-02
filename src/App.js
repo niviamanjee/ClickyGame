@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import ImageCard from "./components/ImageCard";
 import Wrapper from "./components/Wrapper";
-import Title from "./components/Title";
+import Navbar from "./components/Navbar";
 import images from "./images.json";
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -12,7 +12,6 @@ class App extends Component {
     userScore: 0,
     highScore: 0,
     message: "You already guessed this character!",
-    isClicked: false,
     images: images
 
   };
@@ -21,28 +20,22 @@ class App extends Component {
   // const highScore = 0;
 
   clickImage = id => {
-    // const clickedImage = this.state.images.filter(image => image.id === id)
-    // console.log(clickedImage[0])
-
     this.setState({
       images: this.state.images.map(image => {
-
         if (image.id === id) {
-          // if (image.isClicked === false) {
-
-          //   image.isClicked = true
-
-
-          // }
-          // else {
-
-          // }
-
+          if (image.clicked === false) {
+            image.clicked = true
+            this.state.userScore = this.state.userScore + 1
+            console.log(image.clicked, this.state.userScore)
+          }
+          else {
+            console.log(this.state.message)
+            this.state.userScore = 0
+          }
         }
+        return image;
       })
     })
-    console.log(this.state)
-
 
   }
   shuffle = () => {
@@ -57,11 +50,11 @@ class App extends Component {
     return (
 
       <Wrapper>
-        <Title>Kuzco's Klicky Game</Title>
+        <Navbar userScore={this.state.userScore} highScore={this.state.highScore}>Kuzco's Klicky Game</Navbar>
 
 
         {
-          images.map(image => (
+          this.state.images.map(image => (
             <ImageCard
               key={image.id}
               shuffle={this.shuffle}
